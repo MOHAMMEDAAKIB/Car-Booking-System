@@ -1,0 +1,15 @@
+CREATE TABLE `admin_details` (
+    `Admin_Id` VARCHAR(10) NOT NULL,
+    `First_Name` VARCHAR(100) NOT NULL,
+    `Last_Name` VARCHAR(100) NOT NULL,
+    `Date_of_birth` DATE NOT NULL,
+    `NIC` VARCHAR(20) NOT NULL,
+    `pho_Number` INT NOT NULL,
+    `Email` VARCHAR(100) NOT NULL,
+    `Country` VARCHAR(50) NOT NULL,
+    `Province` VARCHAR(50) NOT NULL,
+    `District` VARCHAR(50) NOT NULL,
+    `City` VARCHAR(50) NOT NULL,
+    `Road` VARCHAR(50) NOT NULL,
+    `Hn` VARCHAR(10) NOT NULL
+) ENGINE = MyISAM;
