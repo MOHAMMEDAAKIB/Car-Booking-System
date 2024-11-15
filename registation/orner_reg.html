@@ -81,6 +81,12 @@
         #submit-btn:hover {
             background-color: #595E60;
         }
+        #errorMessage {
+            display: none;
+            color: red;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
 
         /* Responsive adjustments for smaller screens */
         @media (max-width: 600px) {
@@ -151,34 +157,22 @@
             <label>Re-enter password:</label>
             <input type="password" id="password2" aria-label="Confirm Password" name="password" placeholder="Confirm Password" minlength="8" required><br>
         </div>
+        <div id="errorMessage">Passwords do not match.</div>
         <button id="submit-btn" type="submit" value="submit" onclick="validatePasswords()">Register</button>
     </form>
     <script>
-    function validatePasswords() {
-        var password = document.getElementById('password1').value;
-        var confirmPassword = document.getElementById('password2').value;
-    
-    // Check if both passwords are the same
-        if (password !== confirmPassword) {
-            // Display error message if passwords do not match
-            document.getElementById('errorMessage').style.display = 'block';
-            return false;  // Prevent form submission
-        } else {
-            // Hide the error message if passwords match
-            document.getElementById('errorMessage').style.display = 'none';
-            return true;  // Allow form submission
+        function validatePasswords() {
+            var password = document.getElementById('password1').value;
+            var confirmPassword = document.getElementById('password2').value;
+        
+            if (password !== confirmPassword) {
+                document.getElementById('errorMessage').style.display = 'block';
+                return false;
+            } else {
+                document.getElementById('errorMessage').style.display = 'none';
+                return true;
+            }
         }
-    }
-
-
-// Attach the validation function to the form's submit event
-document.getElementById('registrationForm').addEventListener('submit', function(event) {
-    if (!validatePasswords()) {
-        event.preventDefault();  // Prevent form submission if passwords don't match
-    }
-});
-       
-
-    </script>
-</body>
+        </script>
+    </body>
 </html>

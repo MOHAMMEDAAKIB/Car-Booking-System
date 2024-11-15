@@ -1,4 +1,5 @@
 <?php
+// Capture form data from POST request
 $F = $_POST['F_name'];
 $L = $_POST['L_name'];
 $D = $_POST['date_of_b'];
@@ -11,40 +12,34 @@ $di = $_POST['District'];
 $ci = $_POST['city'];
 $ro = $_POST['road'];
 $Hn = $_POST['no'];
-
-<<<<<<< HEAD
-=======
 $Un = $_POST['user_name'];
 $Ps = $_POST['password'];
 
->>>>>>> 2e4d56440f8fd66e3bdafdede90a84d1b6a4b153
-// Corrected the function name to `mysqli_connect`
+// Establish a connection to the database
 $connect = mysqli_connect('localhost', 'root', '', 'car_booking_system');
 
-$sql = "INSERT INTO admin_details(First_Name, Last_Name, Date_of_birth, NIC, pho_Number, Email, Country, Province, District, city, Road, Hn) 
-        VALUES('$F', '$L', '$D', '$N', '$P', '$E', '$C', '$pr', '$di', '$ci', '$ro', '$Hn')";
-
-<<<<<<< HEAD
-// Corrected the function name to `mysqli_query`
-$w = mysqli_query($connect, $sql);
-
-if ($w) {
-    echo "<script>location.replace('../Car-Booking-System/loging.html')</script>"; // Added a semicolon here
-} else {
-    echo "connection error";
+// Check connection
+if (!$connect) {
+    die("Connection failed: " . mysqli_connect_error());
 }
-=======
-$log_sql = "INSERT INTO admin_log_details(user_Name, password) VALUES('$Un','$Ps')";
 
-// Corrected the function name to `mysqli_query`
+// SQL query to insert personal details into admin_details table
+$sql = "INSERT INTO admin_details (First_Name, Last_Name, Date_of_birth, NIC, pho_Number, Email, Country, Province, District, city, Road, Hn) 
+        VALUES ('$F', '$L', '$D', '$N', '$P', '$E', '$C', '$pr', '$di', '$ci', '$ro', '$Hn')";
+
+// SQL query to insert login details into admin_log_details table
+$log_sql = "INSERT INTO admin_log_de (user_Name, password) VALUES ('$Un', '$Ps')";
+
+// Execute both queries and check if both were successful
 $w = mysqli_query($connect, $sql);
 $q = mysqli_query($connect, $log_sql);
 
-if ($w and $q) {
-    echo "Admin detail added successfully"; // Added a semicolon here
+if ($w && $q) {
+    echo "<script>location.replace('../Car-Booking-System/loging.html');</script>";
 } else {
-    echo "Something went wrong";
+    echo "Error: " . mysqli_error($connect);
 }
 
->>>>>>> 2e4d56440f8fd66e3bdafdede90a84d1b6a4b153
+// Close the database connection
+mysqli_close($connect);
 ?>

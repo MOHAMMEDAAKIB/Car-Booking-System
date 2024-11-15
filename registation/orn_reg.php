@@ -27,10 +27,11 @@ $log_sql = "INSERT INTO owner_log_details(user_Name, password) VALUES('$Un','$Ps
 $w = mysqli_query($connect, $sql);
 $q = mysqli_query($connect, $log_sql);
 
-if ($w and $q) {
-    echo "Admin detail added successfully"; // Added a semicolon here
+if ($w && $q) {
+    echo "<script>location.replace('../Car-Booking-System/loging.html');</script>";
 } else {
-    echo "Something went wrong";
+    echo "Error: " . mysqli_error($connect);
 }
+
 
 ?>
