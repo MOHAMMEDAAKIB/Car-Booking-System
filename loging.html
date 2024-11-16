@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +27,19 @@
             align-items: center;
             height: 100vh;
             background-color: #B0B7C0;
+        }
+        .fa-arrow-left {
+            font-size: 24px;
+            color: #050505;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+        }
+
+        .fa-arrow-left:hover {
+            color: #000000;
         }
 
         /* Container styling */
@@ -118,6 +137,9 @@
     </style>
 </head>
 <body>
+    <a href="../actor.html">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+
     <div id="content">
         <h1 id="loging">Login</h1><br>
         <div class="input-container">
@@ -133,6 +155,6 @@
             <a href="#">Forgotten password?</a>
         </div>
         <div id="register">Register</div>
-    </div>
+    </div> 
 </body>
 </html>
