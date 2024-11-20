@@ -138,23 +138,34 @@
 </head>
 <body>
     <a href="../actor.html">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </a>
 
-    <div id="content">
-        <h1 id="loging">Login</h1><br>
-        <div class="input-container">
-            <i class="fas fa-user icon"></i>
-            <input type="text" placeholder="User name">
-        </div>
-        <div class="input-container">
-            <i class="fas fa-lock icon"></i>
-            <input type="password" placeholder="Password">
-        </div>
-        <button id="Loging">Login</button><br><br>
-        <div id="fogpass">
-            <a href="#">Forgotten password?</a>
-        </div>
-        <div id="register">Register</div>
-    </div> 
+        <form method="POST" action="loging.php">
+
+            <div id="content">
+                <h1 id="heading" style="font: size 30px;">Login</h1><br>
+
+                <div class="input-container" >
+                    <i class="fas fa-user icon"></i>
+                    <input type="text" placeholder="User name" id="user_name" name="user_name">
+                </div>
+
+                <div class="input-container">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" placeholder="Password" id="password" name="password">
+                </div>
+
+                <input type="submit" id="Loging" value="Login" ><br><br>
+    </form> 
+                <div id="fogpass">
+                    <a href="#">Forgotten password?</a>
+                </div>
+                
+                <div id="register">
+                    <a href="../actor.html" style="color: #B0B7C0; outline-color: #707370;">Register</a>
+                </div>
+            </div>
+       
 </body>
 </html>
