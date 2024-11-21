@@ -1,0 +1,59 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b6a9a9;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    width: 90%; /* Full width with some margin */
+    
+    height: 80%; /* Landscape orientation */
+    background-image: url('https://pictures.dealer.com/a/autonationdrive/0531/0a16e6b33571d4c928e52f923cc86ebdx.jpg?impolicy=downsize_bkpt&w=412'); /* Replace with your car image file */
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white; /* Change text color for better contrast */
+  }
+  
+  
+  
+  /* Headings */
+  h1, h2 {
+    margin-bottom: 0%;
+    color: #FFD700; /* Gold color for headings */
+  }
+  
+  /* Content */
+  .value {
+    font-size: 1.2rem;
+    color: rgb(255, 250, 255); /* White for other text */
+    margin-bottom: 15px;
+  }
+  
+  /* Button */
+  button {
+    align-self: center;
+    background-color: #FFD700; /* Gold for the button */
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: -40px; /* Move the button up */
+  }
+  
+  button:hover {
+    background-color: #FFC107; /* Slightly brighter gold on hover */
+  }
+  
