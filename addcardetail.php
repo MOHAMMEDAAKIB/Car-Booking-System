@@ -8,7 +8,7 @@ $Catagury = $_POST['validationServer04'] ?? '';
 
 // Handle file upload
 if (isset($_FILES['validationServer05']) && $_FILES['validationServer05']['error'] == UPLOAD_ERR_OK) {
-    $image = $_FILES['validationServer05']['name'];
+    $price = $_FILES['validationServer05']['name'];
     $tmp_name = $_FILES['validationServer05']['tmp_name'];
     $upload_dir = 'uploads/';
 
@@ -28,8 +28,8 @@ if (!$connect) {
 }
 
 // Insert data into the database
-$sql = "INSERT INTO car_details (Car_name, Car_model, Owner_name, year, Catagury, image) 
-        VALUES ('$Car_name', '$Car_model', '$Owner_name', '$year', '$Catagury', '$image')";
+$sql = "INSERT INTO car_details (Car_name, Car_model, Owner_name, year, Catagury, price) 
+        VALUES ('$Car_name', '$Car_model', '$Owner_name', '$year', '$Catagury', '$price')";
 
 $w = mysqli_query($connect, $sql);
 

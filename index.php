@@ -137,9 +137,7 @@
     </style>
 </head>
 <body>
-    <a href="../actor.html">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-    </a>
+    
 
         <form method="POST" action="loging.php">
 
@@ -163,7 +161,7 @@
                 </div>
                 
                 <div id="register">
-                    <a href="../actor.html" style="color: #B0B7C0; outline-color: #707370;">Register</a>
+                    <a href="actor.html" style="color: #B0B7C0; outline-color: #707370;">Register</a>
                 </div>
             </div>
        

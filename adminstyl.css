@@ -63,20 +63,21 @@ body {
     height: 500px;
     display: inline-block;
 }
-.card{
-    margin: 24px;
+.card {
+    margin: 24px auto;
+    width: 90%; /* Adjust for smaller screens */
+    max-width: 600px; /* Limit for larger screens */
+    height: auto; /* Let height adapt */
+    cursor: pointer; /* Indicates interactiveness */
+    border-radius: 8px; /* Smooth edges for better visuals */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-#panal{
-    width: 10%;
-    background-color: #070707;
-    align-items: right;
-    
-}
-#imm{
-    display: block;
-    width: 100px;
-    height: 100px;
-}
+#imm {
+    width: 100%; /* Full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove unnecessary spacing */}
+
+
 
 
 /* Mobile Styles */ @media (max-width: 600px) {

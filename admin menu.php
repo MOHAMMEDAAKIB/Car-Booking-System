@@ -32,8 +32,8 @@ $connect = mysqli_connect('localhost', 'root', '', 'car_booking_system');
             
         </div>
         <div class="auth-links"  >
-            <a href="../actor.html" id="links" onclick="colorchange()" >Register</a>
-            <a href="loging.html" id="linkse" onclick="colorchanger()" >Login</a>
+            <a href="../actor.html" id="links" onclick="href='actor.html'" >Register</a>
+            <a href="loging.html" id="linkse" onclick="href='index.php'" >Login</a>
         </div>
     </div>
 

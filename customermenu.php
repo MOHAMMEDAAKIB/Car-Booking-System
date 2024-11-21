@@ -50,7 +50,7 @@
 
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $sql = "SELECT * FROM car_details";
+        $sql = "SELECT * FROM car_details ";
         $run = mysqli_query($conn,$sql);
         while ($row = mysqli_fetch_array($run))
         { 
@@ -59,20 +59,34 @@
             $model  = $row['Car_model'];
             $year = $row['year'];
             $category =$row['Catagury'];
+            $price=  $row['price'];
 
         ?>
 
 
-            <table id="content" >
-                    <div class="card" style="width:45%; height:500px;">
-                    <img src="defoltcar.jpeg " class="card-img-bottom" alt="..." id="imm" >
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $title ?> </h5>
-                        <p class="card-text">This car is <?php echo $model ?> model and product in <?php echo $year ?>. </p>
-                        <p class="card-text"><small class="text-body-secondary">This car owner <?php echo $owner ?> will give this car for <?php echo $owner ?>Rs</small></p>
+                <div class="card" style="width:35%; height: 350px;" >
+                    <img src="https://pictures.dealer.com/a/autonationdrive/0531/0a16e6b33571d4c928e52f923cc86ebdx.jpg?impolicy=downsize_bkpt&w=412" class="card-img-bottom" alt="Car Image" id="imm" style="with:150px;" >
+                    <div class="card-body" >
+                        <a href="booking_page.php">
+                            <h5 class="card-title"><?php echo $title; ?></h5>
+                            <p class="card-text">This car is a <?php echo $model; ?> model and was manufactured in <?php echo $year; ?>.</p>
+                            <p class="card-text">
+                                <small class="text-body-secondary">
+                                    This car owner, <?php echo $owner; ?>, offers this car for rent at <?php echo $price; ?> Rs.
+                                </small>
+                            </p>
+                        </a>
                     </div>
+                </div>
+                <script>
                     
-            </div>
+                    function tuch(){
+                        location.replace(href="booking_page.php");
+                    }
+                </script>
+
+                 
+            
         <?php }  ?>
 </div>
 
