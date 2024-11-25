@@ -14,12 +14,15 @@ if (isset($_FILES['validationServer05']) && $_FILES['validationServer05']['error
     $image = $_FILES['validationServer05']['name'];
     $tmp_name = $_FILES['validationServer05']['tmp_name'];
 
-    // Move the uploaded file
     if (move_uploaded_file($tmp_name, $target)) {
         echo "<script> alert('Upload successfully...'); </script>";
     } else {
-        echo "<script> alert('Upload failed.'); </script>";
+        echo "<script> alert('File upload failed.'); </script>";
+        $image = 'default.jpg'; // Use default image if upload fails
     }
+} else {
+    echo "<script> alert('No file uploaded.'); </script>";
+    $image = 'default.jpg'; // Use default image if no file is uploaded
 }
 
 // Database connection
@@ -36,7 +39,7 @@ $sql = "INSERT INTO car_details (Car_name, Car_model, Owner_name, year, Catagury
 $w = mysqli_query($connect, $sql);
 
 if ($w) {
-    echo "<script>location.replace('admin menu.html');</script>";
+    echo "<script>location.replace('admin menu.php');</script>";
 } else {
     echo "Error: " . mysqli_error($connect);
 }
