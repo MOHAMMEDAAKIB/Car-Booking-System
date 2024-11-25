@@ -37,7 +37,7 @@ body {
     display: flex;
     justify-content: left;
     padding: 20px;
-    background-color: #525151;
+    background-color: #5e5d5d;
 }
 .search-bar input {
     width: 50%;
@@ -74,8 +74,12 @@ body {
 }
 #imm {
     width: 100%; /* Full width of the card */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0; /* Remove unnecessary spacing */}
+    height: 200px; /* Maintain aspect ratio */
+    margin: 0; /* Remove unnecessary spacing */
+}
+.card-body{
+    height: 250px;
+}
 
 
 
@@ -98,4 +102,7 @@ body {
     width: 100%;
     
 } 
+.card-body{
+    height: 150px;
+}
 }

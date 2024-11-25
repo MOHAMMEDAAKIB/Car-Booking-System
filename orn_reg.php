@@ -28,7 +28,7 @@ $w = mysqli_query($connect, $sql);
 $q = mysqli_query($connect, $log_sql);
 
 if ($w && $q) {
-    echo "<script>location.replace('../Car-Booking-System/loging.html');</script>";
+    echo "<script>location.replace('loging.php');</script>";
 } else {
     echo "Error: " . mysqli_error($connect);
 }

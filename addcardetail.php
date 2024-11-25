@@ -5,19 +5,21 @@ $Car_model = $_POST['validationServer02'] ?? '';
 $Owner_name = $_POST['validationServerOwnername'] ?? '';
 $year = $_POST['validationServer03'] ?? '';
 $Catagury = $_POST['validationServer04'] ?? '';
+$price = $_POST['validationServer06'] ?? '';
 
 // Handle file upload
+$image = null; // Default value in case of no upload
 if (isset($_FILES['validationServer05']) && $_FILES['validationServer05']['error'] == UPLOAD_ERR_OK) {
-    $price = $_FILES['validationServer05']['name'];
+    $target = "carimmage/" . basename($_FILES['validationServer05']['name']);
+    $image = $_FILES['validationServer05']['name'];
     $tmp_name = $_FILES['validationServer05']['tmp_name'];
-    $upload_dir = 'uploads/';
 
-    if (!is_dir($upload_dir)) {
-        mkdir($upload_dir, 0777, true);
+    // Move the uploaded file
+    if (move_uploaded_file($tmp_name, $target)) {
+        echo "<script> alert('Upload successfully...'); </script>";
+    } else {
+        echo "<script> alert('Upload failed.'); </script>";
     }
-    move_uploaded_file($tmp_name, $upload_dir . $image);
-} else {
-    $image = null;
 }
 
 // Database connection
@@ -28,8 +30,8 @@ if (!$connect) {
 }
 
 // Insert data into the database
-$sql = "INSERT INTO car_details (Car_name, Car_model, Owner_name, year, Catagury, price) 
-        VALUES ('$Car_name', '$Car_model', '$Owner_name', '$year', '$Catagury', '$price')";
+$sql = "INSERT INTO car_details (Car_name, Car_model, Owner_name, year, Catagury, price, image) 
+        VALUES ('$Car_name', '$Car_model', '$Owner_name', '$year', '$Catagury', '$price', '$image')";
 
 $w = mysqli_query($connect, $sql);
 

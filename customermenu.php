@@ -23,8 +23,8 @@
             
         </div>
         <div class="auth-links"  >
-            <a href="../actor.html" id="links" onclick="colorchange()" >Register</a>
-            <a href="loging.html" id="linkse" onclick="colorchanger()" >Login</a>
+            <a href="actor.html" id="links" onclick="colorchange()" >Register</a>
+            <a href="loging.php" id="linkse" onclick="colorchanger()" >Login</a>
         </div>
     </div>
     <form method="post" action="">
@@ -64,10 +64,10 @@
         ?>
 
 
-                <div class="card" style="width:35%; height: 350px;" >
-                    <img src="https://pictures.dealer.com/a/autonationdrive/0531/0a16e6b33571d4c928e52f923cc86ebdx.jpg?impolicy=downsize_bkpt&w=412" class="card-img-bottom" alt="Car Image" id="imm" style="with:150px;" >
+                <div class="card" style="width:25%; height: 50%; display: inline-block;margin:20px" >
+                    <img src="https://pictures.dealer.com/a/autonationdrive/0531/0a16e6b33571d4c928e52f923cc86ebdx.jpg?impolicy=downsize_bkpt&w=412" class="card-img-bottom" alt="Car Image" id="imm"  >
                     <div class="card-body" >
-                        <a href="booking_page.php">
+                        <a href="booking_page.php" style="background-color:#5e5d5d;">
                             <h5 class="card-title"><?php echo $title; ?></h5>
                             <p class="card-text">This car is a <?php echo $model; ?> model and was manufactured in <?php echo $year; ?>.</p>
                             <p class="card-text">
