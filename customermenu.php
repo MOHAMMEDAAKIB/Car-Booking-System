@@ -60,12 +60,12 @@
             $year = $row['year'];
             $category =$row['Catagury'];
             $price=  $row['price'];
-
+            $imageData = base64_encode($row['Images']); 
         ?>
 
 
                 <div class="card" style="width:25%; height: 50%; display: inline-block;margin:20px" >
-                    <img src="https://pictures.dealer.com/a/autonationdrive/0531/0a16e6b33571d4c928e52f923cc86ebdx.jpg?impolicy=downsize_bkpt&w=412" class="card-img-bottom" alt="Car Image" id="imm"  >
+                <img src="data:image/jpeg;base64,<?= $imageData ?>" class="card-img-bottom" alt="Car Image" id="imm"  >
                     <div class="card-body" >
                         <a href="booking_page.php" style="background-color:#5e5d5d;">
                             <h5 class="card-title"><?php echo $title; ?></h5>

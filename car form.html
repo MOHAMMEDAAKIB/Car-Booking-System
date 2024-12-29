@@ -25,66 +25,51 @@
       });
     })();
   </script>
+  <style >
+    .formset{
+      margin: 20%;
+      margin-top: 5%;
+    }
+  </style>
 </head>
 <body>
-  <form class="row g-3 needs-validation" action="addcardetail.php" method="post" novalidate>
-    <div class="col-md-4">
-      <label for="validationServer01" class="form-label">Car name</label>
-      <input type="text" class="form-control is-valid" id="validationServer01" name="validationServer01" value="coralla" required>
-      
-    </div>
-    <div class="col-md-4">
-      <label for="validationServer02" class="form-label">Model</label>
-      <input type="text" class="form-control is-valid" id="validationServer02" name="validationServer02" value="121" required>
-    </div>
-    <div class="col-md-4">
-      <label for="validationServerUsername" class="form-label">Owner name</label>
-      <div class="input-group has-validation">
-        <span class="input-group-text" id="inputGroupPrepend3">@</span>
-        <input type="text" class="form-control is-invalid" id="validationServerOwnername" name="validationServerOwnername" required>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <label for="validationServer03" class="form-label">Year</label>
-      <input type="text" class="form-control is-invalid" id="validationServer03" name="validationServer03" required>
-    </div>
-    <div class="col-md-3">
-      <label for="validationServer04" class="form-label">Category</label>
-      <select class="form-select is-invalid" id="validationServer04" name="validationServer04" required>
-        <option disabled value="">Select a category</option>
-        <option value="Luxury">Luxury</option>
-        <option value="Racing">Racing</option>
-        <option value="Five seat">Five seat</option>
-        <option value="Eight seat">Eight seat</option>
-        <option value="Jeep">Jeep</option>
-        <option value="Cab">Cab</option>
-      </select>
-      
-    </div>
-    <div class="col-md-3">
-      <label for="validationServer05" class="form-label">Price per Day</label>
-      <input type="number" class="form-control is-invalid" id="validationServer05" name="validationServer06" required>
-      
-    </div>
-    <div class="col-md-3">
-      <label for="validationServer05" class="form-label">Image</label>
-      <input type="file" class="form-control is-invalid" id="validationServer06" name="validationServer05" required>
-      
-    </div>
-    <div class="col-12">
-      <div class="form-check">
-        <input class="form-check-input is-invalid" type="checkbox" id="invalidCheck3" required>
-        <label class="form-check-label" for="invalidCheck3">
-          Agree to terms and conditions
-        </label>
-        <div class="invalid-feedback">
-          You must agree before submitting.
-        </div>
-      </div>
-    </div>
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit" onclick="location.href='admin menu.php'">Submit form</button>
-    </div>
-  </form>
+ 
+  <div class="formset">
+    <center><h1>Fil This form to add a car</h1></center>
+      <form method="post" action="car_form.php" enctype="multipart/form-data"> 
+        <label for="car_Name" class="form-label">Car name</label>
+        <input type="text" class="form-control is-valid" id="validationServer01" name="car_Name" ></br></br>
+        
+        <label for="Model" class="form-label">Model</label>
+        <input type="text" class="form-control is-valid" id="validationServer02" name="Model" required></br></br>
+
+        <label for="Owner_name" class="form-label">Owner name</label>
+        <input type="text" class="form-control is-invalid" id="validationServerOwnername" name="Owner_name" required></br></br>
+
+        
+
+        <label for="year" class="form-label">Year</label>
+        <input type="text" class="form-control is-invalid" id="validationServer03" name="year" required></br></br>
+
+        <label for="Category" class="form-label">Category</label>
+          <select class="form-select is-invalid" id="validationServer04" name="Category" required>
+            <option disabled value="">Select a category</option>
+            <option value="Luxury">Luxury</option>
+            <option value="Racing">Racing</option>
+            <option value="Five seat">Five seat</option>
+            <option value="Eight seat">Eight seat</option>
+            <option value="Jeep">Jeep</option>
+            <option value="Cab">Cab</option>
+          </select></br></br>
+
+        <label for="price" class="form-label">Price per Day</label>
+        <input type="number" class="form-control is-invalid" id="validationServer05" name="price" required writingsuggestions="false"></br></br>
+
+        <label for="carImage" class="form-label">Uplod car photo</label>
+        <input type="file" name="carImage"class="form-control is-invalid"></br></br>
+
+        <input type="submit" name="submit" value="save" style="  background-color:rgb(115, 171, 245);">
+      </form> 
+  </div>
 </body>
 </html>
